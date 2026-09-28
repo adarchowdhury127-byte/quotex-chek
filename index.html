@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Quotex UID Verification</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090d;--card:#0e1218;--line:#232a35;--tx:#e9edf3;--mu:#8b95a5;--or:#ff7a00;--gr:#19c463;--rd:#ff4d5e;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:radial-gradient(900px 400px at 85% -5%,#3a1a00 0,transparent 60%),var(--bg);color:var(--tx);font-family:'Hind Siliguri',system-ui,sans-serif;line-height:1.6}
+.wrap{max-width:960px;margin:0 auto;padding:0 18px}
+h1,h2,h3{font-family:'Sora','Hind Siliguri',sans-serif;margin:0;line-height:1.2}
+header{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:10px}
+.logo{font-family:Sora;font-weight:800;font-size:20px;letter-spacing:.5px}
+.logo small{display:block;font:500 10px 'Hind Siliguri';color:var(--mu);letter-spacing:1.5px}
+.tg{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1px solid var(--line);border-radius:99px;color:var(--tx);text-decoration:none;font-size:14px;background:var(--card)}
+.tg svg{width:20px;height:20px}
+.hero{padding:30px 0 20px}
+.hero h1{font-size:clamp(28px,7vw,46px);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--or)}
+.hero p{color:var(--mu);max-width:520px;margin:14px 0 22px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:14px 22px;font:600 16px 'Hind Siliguri';cursor:pointer;text-decoration:none;color:#fff;background:var(--or)}
+.btn:hover{filter:brightness(1.1)}
+.btn.g{background:var(--gr)}
+.btn.o{background:transparent;border:1px solid var(--line);color:var(--tx)}
+:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+h2{font-size:24px;margin:38px 0 6px}
+.sub{color:var(--mu);margin:0 0 18px}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.step b{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--or);font-family:Sora;margin-bottom:10px}
+.step h3{font-size:17px;margin-bottom:4px}
+.step p{margin:0;color:var(--mu);font-size:14px}
+.check{border:1px solid #5a2e00;background:linear-gradient(180deg,#1a0f05,var(--card));border-radius:18px;padding:24px 18px;text-align:center;box-shadow:0 0 40px #ff7a0018}
+.check h2{margin:0 0 6px}
+.form{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.form input{flex:1 1 220px;min-width:0;background:#090c11;border:1px solid var(--line);color:var(--tx);border-radius:12px;padding:14px 16px;font:500 17px 'Sora',sans-serif;letter-spacing:1px}
+.form input::placeholder{font:400 15px 'Hind Siliguri';letter-spacing:0;color:var(--mu)}
+.hint{color:var(--mu);font-size:13px;margin-top:12px}
+.msg{color:var(--rd);font-size:14px;min-height:20px;margin-top:8px}
+#res{margin-top:22px;text-align:left}
+.res{border-radius:16px;padding:20px;border:1px solid}
+.res.ok{border-color:#0f6a3a;background:#07160e}
+.res.no{border-color:#7a2530;background:#170a0d}
+.res.wait{border-color:var(--line);background:var(--card)}
+.res h3{display:flex;align-items:center;gap:10px;font-size:20px;margin-bottom:6px}
+.res.ok h3{color:var(--gr)}.res.no h3{color:var(--rd)}
+.dot{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:15px}
+.ok .dot{background:var(--gr)}.no .dot{background:var(--rd)}
+.kv{margin:14px 0;border-top:1px solid #ffffff14}
+.kv div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #ffffff14}
+.kv span{color:var(--mu)}
+.vip{background:#ff7a0018;border:1px solid #ff7a0055;border-radius:12px;padding:12px 14px;margin:14px 0;font-size:14px}
+.res ul{margin:8px 0 14px;padding-left:20px;color:#d8b9be;font-size:14px}
+footer{margin-top:50px;border-top:1px solid var(--line);padding:24px 0 30px;color:var(--mu);font-size:13px;text-align:center}
+footer p{max-width:640px;margin:8px auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="logo">QUOTEX<small>AFFILIATE VERIFICATION</small></div>
+  <a class="tg" href="https://t.me/CW_ownerO" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="#229ED9"/><path d="M5.5 11.8l11.2-4.3c.5-.2 1 .1.8.9l-1.9 9c-.1.6-.5.8-1 .5l-2.8-2.1-1.3 1.3c-.2.2-.3.3-.6.3l.2-2.9 5.2-4.7c.2-.2 0-.3-.3-.1l-6.4 4-2.8-.9c-.6-.2-.6-.6.1-.9z" fill="#fff"/></svg>
+    @CW_ownerO
+  </a>
+</header>
+
+<section class="hero">
+  <h1>আপনার UID ভেরিফাই করুন<br>ও <em>Deposit Status</em> দেখুন</h1>
+  <p>আমাদের লিংক দিয়ে Quotex অ্যাকাউন্ট খুলুন, তারপর আপনার Trading ID (UID) দিয়ে চেক করুন অ্যাকাউন্টটি আমাদের অ্যাফিলিয়েটের অধীনে আছে কিনা।</p>
+  <div class="row">
+    <a class="btn" href="https://broker-qx.pro/sign-up/?lid=2370654" target="_blank" rel="noopener">অ্যাকাউন্ট খুলুন</a>
+    <a class="btn o" href="#check">UID চেক করুন</a>
+  </div>
+</section>
+
+<h2>কীভাবে কাজ করে?</h2>
+<p class="sub">শুধু এই ৪টি ধাপ অনুসরণ করুন।</p>
+<div class="steps">
+  <div class="step"><b>1</b><h3>অ্যাকাউন্ট খুলুন</h3><p>নিচের বা উপরের বাটনের লিংক দিয়েই রেজিস্ট্রেশন করুন। অন্য লিংক দিয়ে খুললে ভেরিফাই হবে না।</p></div>
+  <div class="step"><b>2</b><h3>UID কপি করুন</h3><p>Quotex-এ লগইন করে প্রোফাইল থেকে আপনার Trading ID (UID) কপি করুন।</p></div>
+  <div class="step"><b>3</b><h3>UID চেক করুন</h3><p>নিচের ঘরে UID বসিয়ে “Check UID” বাটনে চাপ দিন।</p></div>
+  <div class="step"><b>4</b><h3>ফলাফল দেখুন</h3><p>অ্যাকাউন্ট পাওয়া গেলে ডিপোজিট তথ্য দেখাবে, তারপর টেলিগ্রামে যোগাযোগ করুন।</p></div>
+</div>
+
+<h2 id="account-link" style="font-size:18px">আমাদের রেজিস্ট্রেশন লিংক</h2>
+<div class="row" style="margin-top:10px">
+  <a class="btn" href="https://broker-qx.pro/sign-up/?lid=2370654" target="_blank" rel="noopener">Web থেকে রেজিস্টার</a>
+  <a class="btn o" href="https://quotex.onelink.me/085a?af_xp=custom&pid=aff&c=2370653" target="_blank" rel="noopener">Android অ্যাপ</a>
+</div>
+
+<h2 style="margin-top:44px" id="check-h"></h2>
+<div class="check" id="check">
+  <h2>আপনার UID চেক করুন</h2>
+  <div class="sub" style="margin:0">Quotex Trading ID (UID) লিখে বাটনে চাপ দিন।</div>
+  <div class="form">
+    <input id="uid" inputmode="numeric" autocomplete="off" maxlength="10" placeholder="আপনার Quotex UID লিখুন" aria-label="Quotex UID">
+    <button class="btn" id="go">Check UID</button>
+  </div>
+  <div class="msg" id="err" role="alert"></div>
+  <div class="hint">উদাহরণ: 12345678 (শুধু সংখ্যা)</div>
+  <div id="res" aria-live="polite"></div>
+</div>
+</div>
+
+<footer><div class="wrap">
+  <p>সাহায্য দরকার? টেলিগ্রামে যোগাযোগ করুন: <a href="https://t.me/CW_ownerO" style="color:var(--or)">@CW_ownerO</a></p>
+  <p>ট্রেডিংয়ে ঝুঁকি আছে, আপনার পুঁজি হারাতে পারেন। শুধু ১৮+ ও যেসব দেশে এটি বৈধ সেখানকার জন্য। এটি Quotex-এর অফিসিয়াল সাইট নয়, একটি অ্যাফিলিয়েট ভেরিফিকেশন পেজ।</p>
+  <p>© 2026 Quotex Affiliate Verification</p>
+</div></footer>
+
+<script>
+/* ===== কনফিগ =====
+   API_URL: আপনার সার্ভারের লিংক (যেখানে Postback জমা হয়)।
+   এটি GET ?uid=12345678 নিলে এই JSON দিবে:
+   {"found":true,"reg_date":"2026-09-28","first_deposit":20,"total_deposits":120}
+   খালি থাকলে পেজ "সংযুক্ত নয়" দেখাবে (ভুয়া রেজাল্ট দেখাবে না)। */
+var CONFIG={API_URL:"https://holy-union-adc1quotex-chek.sohomchowdhury2010.workers.dev/check",TELEGRAM:"https://t.me/CW_ownerO"};
+var $=function(i){return document.getElementById(i)};
+var TG='<a class="btn g" style="width:100%" href="'+CONFIG.TELEGRAM+'" target="_blank" rel="noopener">Telegram-এ যোগাযোগ করুন @CW_ownerO</a>';
+function money(n){return '$'+Number(n||0).toFixed(2)}
+function show(h){$('res').innerHTML=h}
+function found(d){
+  var dep=Number(d.total_deposits||0);
+  show('<div class="res ok"><h3><span class="dot">✓</span>অ্যাকাউন্ট পাওয়া গেছে!</h3>'+
+  '<div style="color:var(--mu);font-size:14px">আপনার অ্যাকাউন্ট আমাদের অ্যাফিলিয়েটের অধীনে আছে।</div>'+
+  '<div class="kv"><div><span>Trading ID</span><b>'+$('uid').value+'</b></div>'+
+  '<div><span>Registration Date</span><b>'+(d.reg_date||'-')+'</b></div>'+
+  '<div><span>First Deposit</span><b>'+money(d.first_deposit)+'</b></div>'+
+  '<div><span>Total Deposits</span><b>'+money(dep)+'</b></div></div>'+
+  '<div class="vip">'+(dep>0?'ডিপোজিট নিশ্চিত হয়েছে। সুবিধা পেতে এখনই টেলিগ্রামে যোগাযোগ করুন।':'অ্যাকাউন্ট ভেরিফাইড। এখনও ডিপোজিট হয়নি, তবুও টেলিগ্রামে যোগাযোগ করুন।')+'</div>'+TG+'</div>');
+}
+function notFound(){
+  show('<div class="res no"><h3><span class="dot">✕</span>অ্যাকাউন্ট পাওয়া যায়নি</h3>'+
+  '<div style="color:var(--mu);font-size:14px">এই UID আমাদের অ্যাফিলিয়েটের অধীনে নেই।</div>'+
+  '<ul><li>UID ভুল লিখে থাকতে পারেন।</li><li>অন্য লিংক দিয়ে অ্যাকাউন্ট খুলেছেন।</li><li>রেজিস্ট্রেশন এখনও সিস্টেমে আসেনি, কিছুক্ষণ পর আবার চেষ্টা করুন।</li></ul>'+
+  '<a class="btn" style="width:100%" href="https://broker-qx.pro/sign-up/?lid=2370654" target="_blank" rel="noopener">আমাদের লিংক দিয়ে নতুন অ্যাকাউন্ট খুলুন</a></div>');
+}
+$('go').onclick=check;
+$('uid').addEventListener('keydown',function(e){if(e.key==='Enter')check()});
+$('uid').addEventListener('input',function(){this.value=this.value.replace(/\D/g,'')});
+function check(){
+  var u=$('uid').value.trim();$('err').textContent='';
+  if(!/^\d{6,10}$/.test(u)){$('err').textContent='সঠিক UID লিখুন (৬–১০ সংখ্যা)।';return}
+  if(!CONFIG.API_URL){
+    show('<div class="res wait"><h3>ভেরিফিকেশন চালু হয়নি</h3><div style="color:var(--mu);font-size:14px;margin-bottom:14px">অনলাইন চেক এখনও সংযুক্ত নয়। আপনার UID টেলিগ্রামে পাঠান, আমরা হাতে চেক করে দেব।</div>'+TG+'</div>');return}
+  $('go').disabled=true;$('go').textContent='চেক হচ্ছে...';
+  fetch(CONFIG.API_URL+(CONFIG.API_URL.indexOf('?')>-1?'&':'?')+'uid='+encodeURIComponent(u))
+    .then(function(r){if(!r.ok)throw 0;return r.json()})
+    .then(function(d){d&&d.found?found(d):notFound()})
+    .catch(function(){show('<div class="res wait"><h3>এখন চেক করা যাচ্ছে না</h3><div style="color:var(--mu);font-size:14px;margin-bottom:14px">একটু পরে আবার চেষ্টা করুন বা টেলিগ্রামে জানান।</div>'+TG+'</div>')})
+    .finally(function(){$('go').disabled=false;$('go').textContent='Check UID'});
+}
+</script>
+</body>
+</html>
