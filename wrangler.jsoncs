@@ -1,0 +1,11 @@
+{
+  "name": "holy-union-adc1quotex-chek",
+  "main": "worker.js",
+  "compatibility_date": "2026-09-01",
+  "kv_namespaces": [
+    {
+      "binding": "UIDS",
+      "id": "65d807ee5f6741d9b299bbb2f06051a9"
+    }
+  ]
+}
